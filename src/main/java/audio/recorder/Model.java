@@ -1,29 +1,63 @@
 package audio.recorder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Sriya on 6/22/16.
  */
 @Entity
+@Table(name = "audio_details")
 public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long recordId;
+    @Column
     String userRecording;
-    String subject;
+    @Column
+    String topicName;
+    @Column
     int numberOfRecordings;
+    @Column
+    String reference;
+    @Column
+    String comments;
+    @Column
+    String source;
+
     //important to have default constructor
     public Model(){}
-    public Model(String userRecording,String subject,int numberOfRecordings){
+    public Model(String userRecording, String topicName, int numberOfRecordings,String reference,String comments,String source){
         this.userRecording=userRecording;
-        this.subject=subject;
+        this.topicName = topicName;
         this.numberOfRecordings=numberOfRecordings;
+        this.reference = reference;
+        this.comments = comments;
+        this.source = source;
     }
 
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
     public String getUserRecording() {
         return userRecording;
     }
@@ -32,12 +66,12 @@ public class Model {
         this.userRecording = userRecording;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getTopicName() {
+        return topicName;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
     }
 
     public int getNumberOfRecordings() {
@@ -54,6 +88,18 @@ public class Model {
 
     public void setRecordId(long recordId) {
         this.recordId = recordId;
+    }
+
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getRecordId()).append(", ")
+                .append(this.getUserRecording()).append(", ")
+                .append(this.getTopicName()).append(", ")
+                .append(this.getNumberOfRecordings()).append(", ")
+                .append(this.getReference()).append(", ")
+                .append(this.getComments()).append(", ")
+                .append(this.getSource());
+        return builder.toString();
     }
 
 

@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <title>wavesurfer.js | Angular Material</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> </meta>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'> </link>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'
+          rel='stylesheet' type='text/css'> </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css" rel="stylesheet"> </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0-rc3/angular-material.min.css"
+          rel="stylesheet" type="text/css"/> </link>
+    <link  rel="stylesheet" href="../css/main.css" th:href="@{/css/main.css}" media="screen"> </link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0-rc3/angular-material.min.js"></script>
+    <script type="text/javascript" src="/static/js/wavesurfer.min.js" th:src="@{/js/wavesurfer.min.js}"></script>
+    <script type="text/javascript" src="/static/js/wavesurfer.directive.js" th:src="@{/js/wavesurfer.directive.js}"></script>
+    <script type="text/javascript" src="/static/js/main.js" th:src="@{/js/main.js}"></script>
+</head>
+<body ng-app="mdWavesurferApp" ng-controller="MainController">
+<md-wavesurfer-audio player-wave-color="gray" player-progress-color="black"
+                     player-backend="MediaElement">
+    <!-- This is analogous to HTML <source> element -->
+    <md-wavesurfer-source src="/media/bts.mp3" title="Track1"></md-wavesurfer-source>
+    <md-wavesurfer-source src="/media/bts.mp3" title="Track2"></md-wavesurfer-source>
+    <md-wavesurfer-source src="/media/bts.mp3"
+                          title="Track3"></md-wavesurfer-source>
+    <!-- <md-wavesurfer-source -->
+    <!--    src="http://download.wavetlan.com/SVV/Media/HTTP/MP3/Nero_SmartTrax/NeroSmartTrax_test1_MPEG2_Stereo_CBR_48kbps_22050Hz.mp3" -->
+    <!--    title="Remote: Nero SmartTrax- Test 1"></md-wavesurfer-source> -->
+    <!-- <md-wavesurfer-source -->
+    <!--    src="http://download.wavetlan.com/SVV/Media/HTTP/MP3/Nero_SmartTrax/NeroSmartTrax_test2_MPEG1_Mono_CBR_64kbps_44100Hz.mp3" -->
+    <!--    title="Remote: Nero SmartTrax- Test 2"></md-wavesurfer-source> -->
+
+    <!-- Long list, using previously loaded files, need to test container.-->
+    <md-wavesurfer-source ng-repeat="item in longList" src="{{item.url}}"
+                          title="{{item.title}}"></md-wavesurfer-source>
+
+
+</md-wavesurfer-audio>
+</body>
+</html>
+
+

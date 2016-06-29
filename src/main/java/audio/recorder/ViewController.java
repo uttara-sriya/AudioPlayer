@@ -11,12 +11,12 @@ import java.util.Date;
  */
 @Controller
 public class ViewController {
-    @RequestMapping("/audio")
+    @RequestMapping("/play")
     public String index(Model model){
         model.addAttribute("datetime",new Date());
         model.addAttribute("username","Cool Hacker");
         model.addAttribute("mode","development");
         //model.addAttribute("mode","production");
-        return "audio";
+        return "player";
     }
 }

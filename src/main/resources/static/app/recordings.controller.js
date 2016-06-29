@@ -43,16 +43,16 @@
             });
 
         }
-/*        function downloadRecording(recordId){
-            var url="/audio/download/"+recordId;
-            $http.post(url).then(function (response){
-                var blob=new Blob([response]);
-                var link=document.createElement('a');
-                link.href=window.URL.createObjectURL(blob);
-                link.download="myFileName.txt";
-                link.click();
-            });
-        }*/
+        /*function downloadRecording(recordId){
+         var url="/audio/download/"+recordId;
+         $http.post(url).then(function (response){
+         var blob=new Blob([response]);
+         var link=document.createElement('a');
+         link.href=window.URL.createObjectURL(blob);
+         link.download="myFileName.txt";
+         link.click();
+         });
+         }*/
 
     }
 
